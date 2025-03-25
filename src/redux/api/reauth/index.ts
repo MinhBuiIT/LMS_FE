@@ -42,7 +42,7 @@ export const baseQueryWithReAuth: BaseQueryFn<string | FetchArgs, unknown, Fetch
 
         //Retry the original request
         result = await baseQuery(args, api, extraOptions);
-      } catch (error) {
+      } catch (error: any) {
         store.dispatch(setUnauthenticated());
       }
     } else {
